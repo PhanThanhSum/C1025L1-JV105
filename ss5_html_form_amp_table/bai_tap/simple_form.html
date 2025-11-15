@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Form</title>
+    <style>
+        <!-- Đặt CSS cho class wufoo-->
+        .wufoo{
+            font-family: "Lucida Grande", "Times New Roman", Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="post">
+    <h1>Order Form</h1>
+    <p>What would you like to buy?</p>
+    <select name="tobuy" id="select1">
+        <option value="select1">A</option>
+        <option value="select2">B</option>
+        <option value="select3">C</option>
+    </select>
+    <p>How many would you like to order?</p>
+    <input type="radio" name="quantity" value="1">1 - $10 <br>
+    <input type="radio" name="quantity" value="2">2 - $20 <br>
+    <input type="radio" name="quantity" value="3">3 - $25 <br>
+    <h2>Name</h2>
+    <input type="text" name="firstname" placeholder="First Name">
+    <input type="text" name="lastname" placeholder="Last Name"> <br>
+    <h2>Email</h2>
+    <input type="email" name="email" placeholder="Email Address"> <br>
+    <h2>Phone Number</h2>
+    <input type="text" name="phone1" size="5"> -
+    <input type="text" name="phone2" size="5"> -
+    <input type="text" name="phone3" size="5"> <br>
+    <p><input type="submit"></p>
+</form>
+</body>
+</html>
