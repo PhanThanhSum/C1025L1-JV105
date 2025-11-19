@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+</head>
+<body>
+<form action="">
+    <input type="text" name="num1" id="num1">
+    <input type="text" name="num2" id="num2"> <br>
+    <input type="button" onclick="cong()" value="+">
+    <input type="button" onclick="tru()" value="-">
+    <input type="button" onclick="nhan()" value="*">
+    <input type="button" onclick="chia()" value="/">
+    <h3>Result: </h3>
+    <p id="result"></p>
+</form>
+</body>
+<script>
+    function cong() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+        document.getElementById("result").innerHTML = a + b;
+    }
+    function tru() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+        document.getElementById("result").innerHTML = a - b;
+    }
+    function nhan() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+        document.getElementById("result").innerHTML = a * b;
+    }
+    function chia() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+        document.getElementById("result").innerHTML = a / b;
+    }
+</script>
+</html>
