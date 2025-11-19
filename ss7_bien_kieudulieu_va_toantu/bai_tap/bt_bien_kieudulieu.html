@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<form action="">
+
+</form>
+</body>
+<script>
+    bai1()
+    bai2()
+    bai3()
+    bai4()
+    function bai1() {
+        let vl = Number(prompt("Nhap diem vat ly:"))
+        let hh = Number(prompt("Nhap diem hoa hoc:"))
+        let sh = Number(prompt("Nhap diem sinh hoc:"))
+        alert("Diem trung binh la: " + ((vl + hh + sh) / 3) + "\n" + "Tong diem la: " + (vl + hh + sh))
+    }
+
+    function bai2() {
+        let c = Number(prompt("Nhap do C:"))
+        let f = c * 1.8 + 32
+        alert("Chuyen do C sang do F: " + f)
+    }
+    function bai3() {
+        let r = Number(prompt("Nhap vao ban kinh:"))
+        let s = r * r * 3.14
+        alert("Dien tich hinh tron la: " + s)
+    }
+    function bai4() {
+        let r = Number(prompt("Nhap vao ban kinh:"))
+        let s = r * 2 * 3.14
+        alert("Chu vi hinh tron la: " + s)
+    }
+</script>
+</html>
