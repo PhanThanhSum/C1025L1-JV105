@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toán tử 3 ngôi</title>
+</head>
+<body>
+
+</body>
+<script>
+    bai1()
+    bai2()
+    function bai1 () {
+        let a = Number(prompt("Nhap vao a", 0))
+        let b = Number(prompt("Nhap vao b", 0))
+        let result = (a + b) < 4 ? 'Below' : 'Over';
+        alert(result);
+    }
+
+    function bai2 () {
+        let message = prompt("Nhap vao message")
+        let result = message === "Employee" ? "Hello" : message === "Director" ? "Greetings" : message === "" ? "No login" : ""
+        alert(result);
+    }
+
+</script>
+</html>
