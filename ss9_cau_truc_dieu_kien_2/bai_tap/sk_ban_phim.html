@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" alt="nobita" id="myImage" style="height: 100px"> <br>
+</body>
+<script>
+    let myImg = document.getElementById("myImage");
+    function init() {
+        myImg.style.position='relative';
+        myImg.style.left='0px';
+        myImg.style.top='0px';
+        docReady();
+    }
+    function moveRight() {
+        myImg.style.left= parseInt(myImg.style.left) + 10 + 'px';
+    }
+    function moveLeft() {
+        if (parseInt(myImg.style.left) >= 0) {
+            myImg.style.left= parseInt(myImg.style.left) - 10 + 'px';
+        }
+    }
+    function moveDown() {
+        myImg.style.top= parseInt(myImg.style.top) + 10 + 'px';
+    }
+    function moveUp() {
+        if (parseInt(myImg.style.top) >= 0) {
+            myImg.style.top= parseInt(myImg.style.top) - 10 + 'px';
+        }
+    }
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                moveLeft();
+                break;
+            case 38:
+                moveUp();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 40:
+                moveDown();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+    window.onload = init;
+</script>
+</html>

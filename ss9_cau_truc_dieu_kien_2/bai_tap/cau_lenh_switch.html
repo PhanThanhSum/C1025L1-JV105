@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh so ngay trong mot thang </title>
+</head>
+<body>
+<form action="">
+    <input type="text" id="month" name="month">
+    <input type="button" id="button" value="Tinh so ngay" onclick="tinhSoNgay()"> <br>
+    <div id="result"></div>
+</form>
+</body>
+<script>
+    function tinhSoNgay() {
+        let month = parseInt(document.getElementById("month").value);
+        let soNgay = 0;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                soNgay = 31;
+                break;
+            case 2:
+                soNgay = '28 hoac 29';
+                break;
+            default:
+                soNgay = 30;
+        }
+        document.getElementById("result").innerHTML = 'Thang ' + month + ' co ' + soNgay + ' ngay';
+    }
+</script>
+</html>
