@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tempurature</title>
+</head>
+<body>
+
+</body>
+<script>
+    function Tempurature(x) {
+        this.doC = Number(x) > -273 ? Number(x) : -273;
+        this.convertToF = function (){
+            return this.doC * 9 / 5 + 32
+        }
+        this.convertToK = function(){
+            return this.doC + 273
+        }
+    }
+    let t1 = new Tempurature(25);
+    alert(t1.convertToF());
+    alert(t1.convertToK());
+</script>
+</html>
