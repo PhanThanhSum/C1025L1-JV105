@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lop chu nhat</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="600">
+
+</canvas>
+</body>
+<script>
+    function HinhChuNhat(dai, rong){
+        this.dai = parseInt(dai);
+        this.rong = parseInt(rong);
+        this.dienTich = function() {
+            return this.dai * this.rong;
+        }
+        this.chuVi = function(){
+            return (this.dai + this.rong) * 2;
+        }
+        this.veHinh = function(){
+            let c = document.getElementById("canvas");
+            let ctx = c.getContext("2d");
+            ctx.moveTo(0,0);
+            ctx.lineTo(0,this.rong);
+            ctx.moveTo(0, this.rong);
+            ctx.lineTo(this.dai, this.rong);
+            ctx.moveTo(this.dai, this.rong);
+            ctx.lineTo(this.dai, 0);
+            ctx.moveTo(this.dai, 0);
+            ctx.lineTo(0, 0);
+            ctx.stroke();
+        }
+    }
+    let h1 = new HinhChuNhat(200, 300);
+    h1.veHinh();
+    alert(h1.dienTich());
+    alert(h1.chuVi());
+</script>
+</html>
