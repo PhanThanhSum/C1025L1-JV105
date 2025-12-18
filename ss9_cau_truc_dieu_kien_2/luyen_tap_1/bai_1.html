@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<p id="resurt"></p>
+</body>
+<script>
+    let a = prompt("Nhap vao a = ")
+    let b = prompt("Nhap vao b = ")
+    if (a % b === 0) {
+        let obj = document.getElementById("resurt")
+        obj.innerHTML = "a chia het cho b"
+    } else {
+        let obj = document.getElementById("resurt")
+        obj.innerHTML = "a khong chia het cho b"
+    }
+</script>
+</html>

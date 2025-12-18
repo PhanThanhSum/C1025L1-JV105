@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator UI</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator {
+            border: 6px solid black;
+            padding: 20px;
+            width: 320px;
+        }
+
+        .display {
+            width: 100%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            padding-right: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .btn {
+            height: 55px;
+            font-size: 24px;
+            color: blue;
+            background: white;
+            border: 3px solid #ccc;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="calculator">
+    <label>
+        <input type="text" class="display" value="1" readonly>
+    </label>
+
+    <div class="buttons">
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn">+</button>
+
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+        <button class="btn">-</button>
+
+        <button class="btn">7</button>
+        <button class="btn">8</button>
+        <button class="btn">9</button>
+        <button class="btn">x</button>
+
+        <button class="btn">C</button>
+        <button class="btn">0</button>
+        <button class="btn">=</button>
+        <button class="btn">/</button>
+    </div>
+</div>
+</body>
+</html>

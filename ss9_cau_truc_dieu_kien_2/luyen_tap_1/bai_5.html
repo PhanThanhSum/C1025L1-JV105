@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+</body>
+<script>
+    let input = prompt("Nhap vao diem bai tap, diem giua ki, diem cuoi ki cach nhau 1 dau cach");
+    let [baiTap, giuaKi, cuoiKi] = input.trim().split(' ');
+    let diemTB = baiTap * 0.2 + giuaKi * 0.2 + cuoiKi * 0.6;
+    let xepHang;
+    if (diemTB > 8.5) {
+        xepHang = "A";
+    } else if (diemTB > 7) {
+        xepHang = "B";
+    } else if (diemTB > 6) {
+        xepHang = "C";
+    } else if (diemTB > 4) {
+        xepHang = "D";
+    } else {
+        xepHang = "F";
+    }
+    document.getElementById("result").innerHTML = "Xep hang hoc luc " + xepHang;
+</script>
+</html>

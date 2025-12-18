@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_6</title>
+</head>
+<body>
+
+</body>
+<script>
+    let doanhSo = Number(prompt("Nhập doanh số bán hàng (VND):"));
+
+    if (isNaN(doanhSo) || doanhSo < 0) {
+        alert("Vui lòng nhập doanh số hợp lệ!");
+    } else {
+        let hoaHong;
+
+        if (doanhSo < 5000000) {
+            hoaHong = doanhSo * 0.05;
+        } else if (doanhSo < 10000000) {
+            hoaHong = doanhSo * 0.10;
+        } else {
+            hoaHong = doanhSo * 0.20;
+        }
+
+        alert(
+            "Doanh số: " + doanhSo.toLocaleString() + " VND\n" +
+            "Hoa hồng nhận được: " + hoaHong.toLocaleString() + " VND"
+        );
+    }
+</script>
+</html>

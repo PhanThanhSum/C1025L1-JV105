@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7 Tinh cuoc dien thoai</title>
+</head>
+<body>
+<label for="tfCuocDT">Cuoc dt</label>
+<input type="text" id="tfCuocDT">
+<input type="button" value="Ok" onclick="tinh()"> <br>
+<p id="cuocDT"></p>
+<p id="soTien"></p>
+</body>
+<script>
+    function tinh() {
+        var cuocdt = Number(document.getElementById("tfCuocDT").value)
+        let soTien;
+        if (cuocdt < 10) {
+            soTien = cuocdt * 10000
+        } else if (cuocdt < 50) {
+            soTien = cuocdt * 20000
+        } else {
+            soTien = cuocdt * 30000
+        }
+        document.getElementById("cuocDT").innerHTML = cuocdt;
+        document.getElementById("soTien").innerHTML = soTien;
+    }
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+<p id="result"></p>
+</body>
+<script>
+    let input = prompt("Nhap vao a b c cach nhau 1 dau cach");
+
+    if (input !== null) {
+        let [a, b, c] = input.trim().split(/\s+/);
+        //trim(): de xoa khoang trang o dau va cuoi chuoi
+        //split(/\s+/) dung de cat chuot thanh mang
+        // \s: co nghia la ki tu trong (cach, tab, xuong dong)  +: co nghia la nhieu (vd nhieu dau cach)
+        // /.../ : regex trong javascript
+        let max
+        if (a > b && a > c){
+            max = a
+        } else if (b > c) {
+            max = b
+        } else {
+            max = c
+        }
+        document.getElementById("result").innerHTML = "max = " + max;
+    }
+</script>
+</html>
