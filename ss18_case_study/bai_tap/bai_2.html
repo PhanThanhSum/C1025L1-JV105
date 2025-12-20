@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+
+</body>
+<script>
+    let [a, b, c] = prompt("Nhap vao 3 canh tam giac").trim().split(/\s+/).map(function(element) {
+        return Number(element)
+    })
+    function checkTriangle(a, b, c) {
+        if (a <= 0 || b <= 0 || c <= 0) return -1;
+        if (a < b + c && b < a + c && c < a + b) {
+            if (a ** 2 + b ** 2 === c ** 2 || a ** 2 + c ** 2 === b ** 2 || b ** 2 + c ** 2 === a ** 2)
+                return 1;
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+    let check = checkTriangle(a, b, c);
+    if (check === -1) {
+        alert("Khong phai tam giac")
+    } else if (check === 0) {
+        alert("La tam giac thuong")
+    } else {
+        alert("La tam giac vuong")
+    }
+</script>
+</html>

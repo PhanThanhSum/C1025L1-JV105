@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id = "result">
+
+</p>
+</body>
+<script>
+    let arr = prompt("Nhap vao mang").trim().split(/\s+/).map(function(element) {
+        return Number(element);
+    })
+    document.getElementById("result").innerHTML = arr.join(" ");
+    let kt = true
+    for(let i = 0; i < Math.trunc(arr.length / 2); i++) {
+        if(arr[i] !== arr[arr.length - i - 1]) {
+            kt = false;
+        }
+    }
+    if(kt) {
+        alert("OK")
+    } else {
+        alert("NO")
+    }
+</script>
+</html>
