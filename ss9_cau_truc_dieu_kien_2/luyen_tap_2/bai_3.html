@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<h2>Tinh Dien tich hinh vuong</h2>
+<label>Canh a: </label> <input type="text" id="a"><br>
+<label>Dien tich</label> <input type="text" id="dt" readonly><br>
+<input type="button" value="OK" onclick="dienTich()">
+</body>
+<script>
+function dienTich() {
+    let a = Number(document.getElementById("a").value);
+    if(a != null) {
+        document.getElementById("dt").value = a * a;
+    } else {
+        alert("Hay nhap vao a")
+    }
+}
+</script>
+</html>

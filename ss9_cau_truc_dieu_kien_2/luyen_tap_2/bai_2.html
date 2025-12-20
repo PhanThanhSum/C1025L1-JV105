@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+<label for="m">m: </label>
+<input type="text" id="m"> <br>
+<label for="f">f: </label>
+<input type="text" id="f"> <br>
+<input type="button" id="bt" value="OK" onclick="ok()">
+</body>
+<script>
+    function ok() {
+        let m = document.getElementById("m").value;
+        document.getElementById("f").value = m * 3.2808;
+    }
+</script>
+</html>
