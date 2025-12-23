@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 6</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = prompt("Nhap vao mang so nguyen cach nhau 1 dau cach").trim().split(/\s+/).map(function (value) {
+        return Number(value);
+    });
+
+    let kt = ktMang(arr);
+    if(kt === 1) {
+        alert("La mang cac so chan")
+    } else if (kt === 0) {
+        alert("La mang cac so le")
+    } else if (kt === -1) {
+        alert("La mang khong chan khong le")
+    } else if (kt === -2) {
+        alert("Ban nhap vao khong phai mang")
+    }
+    function ktMang(arr){
+        if (!Array.isArray(arr)){
+            return -2;
+        }
+        let ktc = 1, ktl = 1;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0){
+                ktl = 0;
+            } else {
+                ktc = 0;
+            }
+        }
+        if (ktc === 0 && ktl === 1) {
+            return 0;
+        } else if (ktc ===1 && ktl ===0) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+</script>
+</html>

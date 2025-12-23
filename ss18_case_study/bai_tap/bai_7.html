@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    let arr = prompt("Nhap vao mang").trim().split(/\s+/).map(function(value) {
+        return Number(value);
+    });
+    alert(ktMang(arr));
+
+    function kiemTraMang(arr) {
+        let coSo = false;
+        let coChu = false;
+
+        for (let x of arr) {
+            if (typeof x === "number") {
+                coSo = true;
+            } else if (typeof x === "string" && isNaN(Number(x))) {
+                coChu = true;
+            }
+        }
+
+        if (coSo && !coChu) return 1;
+        if (!coSo && coChu) return 0;
+        return -1;
+    }
+</script>
+</html>

@@ -8,15 +8,33 @@
 
 </body>
 <script>
-    let x = prompt("Nhap vao 1 phan so")
-    function find(x){
-        if (x.indexOf("/") !== -1){
-            let arr = x.split("/")
-            let du = arr[0] % arr[1]
-            if(du )
-        } else {
-            return -1
+    let s = prompt("Nhap vao 1 phan so")
+    if(s.indexOf("/") === -1){
+        alert("Khong phai la phan so")
+    } else {
+        let [a, b] = s.trim().split("/").map(function(value) {
+            return Number(value);
+        });
+        let phanSo = rutGon(a, b);
+        alert(phanSo.tu + "/" + phanSo.mau);
+    }
+
+    function gcd(a, b) {
+        while (b !== 0) {
+            let r = a % b
+            a = b
+            b = r
+        }
+        return a
+    }
+
+    function rutGon (a, b) {
+        let ucln = gcd(a, b)
+        return {
+            tu: a / ucln,
+            mau: b / ucln
         }
     }
+
 </script>
 </html>
