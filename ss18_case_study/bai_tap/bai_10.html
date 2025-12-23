@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 10</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    let str = prompt("Nhap vao 1 chuoi");
+
+    function checkString(str){
+        let result = new Set();
+        let check = "ueoaiUEOAI"
+        for(c of str) {
+            if (check.includes(c)){
+                result.add(c);
+            }
+        }
+        return result;
+    }
+    let arr = []
+    for (let x of checkString(str)) {
+        arr.push(x);
+    }
+
+    alert(arr.join(", "));
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="content"></p>
+</body>
+<script>
+    let arr = prompt("Nhap vao mang so nguyen").trim().split(/\s+/).map(function (value) {
+        return Number(value);
+    });
+    document.getElementById("content").innerHTML = arr.join(" ");
+    let kt = true;
+    if (arr.length % 2 !== 0) {
+        alert(
+            "Mang nhap vao phai co so luong phan tu la so chan"
+        );
+    } else {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= arr[i + 1]) {
+                kt = false;
+            }
+        }
+        alert(kt ? "OK" : "NO");
+    }
+
+</script>
+</html>
