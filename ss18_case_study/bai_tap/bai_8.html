@@ -21,7 +21,7 @@
 
     function check(arr) {
         for (let x of arr) {
-            if (typeof x === "number" && !ktSoNguyenTo(x)) {
+            if (!Number.isNaN(x) && !ktSoNguyenTo(x)) {
                 return false;
             }
         }
