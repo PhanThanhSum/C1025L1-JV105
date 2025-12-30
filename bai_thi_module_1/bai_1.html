@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<form action="">
+    <p id="arr"> </p>
+    <p>
+        <label>Them 1 phan tu</label>
+        <input type="text" id="input1">
+        <input type="button" id="button1" value="Them" onclick="them()">
+    </p>
+    <p>
+        <label>Trung binh cong cac so chia het cho 3: </label>
+        <label id="resultTB"></label>
+    </p>
+</form>
+</body>
+<script>
+    let arr = [];
+
+    function them(){
+        let num = Number(document.getElementById('input1').value);
+        if (!Number.isNaN(num) && arr.length <= 50) {
+            arr.push(num);
+        } else if (!Number.isNaN(num) && arr.length >= 50){
+            alert("Mảng đã đầy 50 phần tử");
+        } else if (Number.isNaN(num)) {
+            alert("Hay nhap 1 phan tu la so");
+        }
+        document.getElementById('input1').value = "";
+        show();
+    }
+
+    function show(){
+        let str = ""
+        for (let i = 0; i < arr.length; i++) {
+            str += arr[i] + " ";
+        }
+        document.getElementById('arr').innerText = str;
+        document.getElementById('resultTB').innerText = tinhTrungBinh();
+    }
+
+    function tinhTrungBinh () {
+        let sum = 0;
+        let dem = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 3 ===0 ) {
+                sum += arr[i];
+                dem ++;
+            }
+        }
+        if (dem > 0) {
+            return sum / dem;
+        }
+        return 0;
+    }
+</script>
+</html>

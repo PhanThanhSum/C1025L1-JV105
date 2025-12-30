@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Quản lý công nhân</h2>
+
+<button onclick="them()">Thêm công nhân</button>
+<button onclick="sua()">Sửa công nhân</button>
+<button onclick="xoa()">Xóa công nhân</button>
+
+<br><br>
+
+<table id="tableCN">
+    <tr>
+        <th>STT</th>
+        <th>Họ và tên</th>
+        <th>Ngày sinh</th>
+        <th>Địa chỉ</th>
+        <th>Lương</th>
+        <th>Chức vụ</th>
+    </tr>
+</table>
+</body>
+<script>
+    function CongNhan(stt, hoVaTen, ngaySinh, diaChi, luong, chucVu) {
+        this.stt = stt;
+        this.hoVaTen = hoVaTen;
+        this.ngaySinh = ngaySinh;
+        this.diaChi = diaChi;
+        this.luong = luong;
+        this.chucVu = chucVu;
+    }
+
+    function QuanLyCongNhan() {
+        this.allCongNhan = [];
+
+        this.them = function (cn) {
+            this.allCongNhan.push(cn);
+        }
+
+        this.tim = function (stt) {
+            return this.allCongNhan.find(cn => cn.stt === stt);
+        }
+
+        this.xoa = function (stt) {
+            let index = this.allCongNhan.findIndex(cn => cn.stt === stt);
+            if (index !== -1) {
+                this.allCongNhan.splice(index, 1);
+                return true;
+            }
+            return false;
+        }
+
+        this.getAll = function () {
+            return this.allCongNhan;
+        }
+    }
+
+    let ql = new QuanLyCongNhan();
+
+    ql.them(new CongNhan(1, "Trương Tấn A", "11-11-1997", "Quang Nam", 2000, "Abc"));
+    ql.them(new CongNhan(2, "Trương Tấn B", "11-11-1998", "Đà Nẵng", 2000, "Abc"));
+    ql.them(new CongNhan(3, "Trương Tấn C", "11-11-1999", "Huế", 2000, "Abc"));
+    hienThi();
+
+    function hienThi() {
+        let table = document.getElementById("tableCN");
+
+        table.innerHTML = `
+            <tr>
+                <th>STT</th>
+                <th>Họ và tên</th>
+                <th>Ngày sinh</th>
+                <th>Địa chỉ</th>
+                <th>Lương</th>
+                <th>Chức vụ</th>
+            </tr>
+        `;
+
+        let ds = ql.getAll().sort(function (a, b) {
+            return a.hoVaTen.localeCompare(b.hoVaTen);
+        });
+
+        for (let cn of ds) {
+            let row = table.insertRow();
+            row.insertCell(0).innerText = cn.stt;
+            row.insertCell(1).innerText = cn.hoVaTen;
+            row.insertCell(2).innerText = cn.ngaySinh;
+            row.insertCell(3).innerText = cn.diaChi;
+            row.insertCell(4).innerText = cn.luong;
+            row.insertCell(5).innerText = cn.chucVu;
+        }
+    }
+
+    function them() {
+        let stt = Number(prompt("Nhap STT:"));
+        let hoVaTen = prompt("Nhap ho va ten:");
+        let ngaySinh = prompt("Nhap ngay sinh:");
+        let diaChi = prompt("Nhap dia chi:");
+        let luong = Number(prompt("Nhap luong:"));
+        let chucVu = prompt("Nhap chuc vu:");
+
+        ql.them(new CongNhan(stt, hoVaTen, ngaySinh, diaChi, luong, chucVu));
+        hienThi();
+    }
+
+    function sua() {
+        let stt = Number(prompt("Nhap STT cong nhan can sua:"));
+        let cn = ql.tim(stt);
+
+        if (!cn) {
+            alert("Khong tim thay cong nhan!");
+            return;
+        }
+
+        cn.hoVaTen = prompt("Nhap ho va ten moi:", cn.hoVaTen);
+        cn.ngaySinh = prompt("Nhap ngay sinh moi:", cn.ngaySinh);
+        cn.diaChi = prompt("Nhap dia chi moi:", cn.diaChi);
+        cn.luong = Number(prompt("Nhap luong moi:", cn.luong));
+        cn.chucVu = prompt("Nhap chuc vu moi:", cn.chucVu);
+
+        hienThi();
+    }
+
+    function xoa() {
+        let stt = Number(prompt("Nhap STT cong nhan can xoa:"));
+
+        if (ql.xoa(stt)) {
+            alert("Da xoa cong nhan");
+        } else {
+            alert("Khong tim thay cong nhan!");
+        }
+
+        hienThi();
+    }
+</script>
+</html>

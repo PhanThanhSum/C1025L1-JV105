@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+
+</body>
+<script>
+    let input = prompt("Nhap thang/nam (MM/yyyy):");
+
+    let regex = /^(0[1-9]|1[0-2])\/\d{4}$/;
+
+    if (!regex.test(input)) {
+        alert("Sai dinh dang! Vui long nhap theo MM/yyyy");
+    } else {
+        let [month, year] = input.split("/");
+        month = Number(month);
+        year = Number(year);
+
+        let soNgay;
+
+        switch (month) {
+            case 1: case 3: case 5: case 7:
+            case 8: case 10: case 12:
+                soNgay = 31;
+                break;
+
+            case 4: case 6: case 9: case 11:
+                soNgay = 30;
+                break;
+
+            case 2:
+                soNgay = laNamNhuan(year) ? 29 : 28;
+                break;
+        }
+
+        alert("Thang " + month + "/" + year + " co " + soNgay + " ngay");
+    }
+
+    function laNamNhuan(year) {
+        return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
+    }
+</script>
+</html>
